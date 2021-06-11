@@ -1,0 +1,16 @@
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+    margin: 20px;
+}
+
+form{
+    padding: 20px;
+}
+
+form input{
+    margin: 3px;
+}

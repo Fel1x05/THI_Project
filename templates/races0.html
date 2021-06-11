@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block name %}Главная страница{% endblock %}
+
+{% block content %}
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+            <th>Дистанция</th>
+            <th>Дорожка</th>
+            <th>Время забега</th>
+            <th>Номер забега</th>
+            <th>Итоговое время</th>
+            <th>Место</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for race in races %}
+
+           <tr>
+                <td>{{race.distance}}</td>
+                <td>{{race.track}}</td>
+                <td>{{race.time}}</td>
+                <td>{{race.number}}</td>
+                <td>{{race.result_time}}</td>
+                <td>{{race.place}}</td>
+           </tr>
+       {% endfor %}
+       </tbody>
+    </table>
+    </div>
+
+    <form class="auth_form" method="post" action="/races">
+        {% csrf_token %}
+        <label><input type="radio" name="distance" required value="100">100 метров</label><br>
+        <label><input type="radio" name="distance" required value="400">400 метров</label><br>
+        <label><input type="radio" name="distance" required value="1000">1000 метров</label><br>
+        <input type="submit" value="Отправить">
+    </form>
+{% endblock %}

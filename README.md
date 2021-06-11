@@ -1,1 +1,1 @@
-# Software-Development-Technologies
+# THI Project
